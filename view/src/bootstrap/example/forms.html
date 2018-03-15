@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Forms</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../../jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="../js/bootstrap.min.js" type="text/javascript"></script>
+    <style>
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+    <div class="col-sm-6 well">
+        <form class="form-horizontal" action="" method="post">
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" value="" placeholder="Имя" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" value="" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="tel" name="phone" value="" placeholder="Телефон" required>
+            </div>
+            <div class="form-group">
+                <textarea name="msg" class="form-control" rows="6"></textarea>
+            </div>
+            <div class="flex-center">
+                <input type="submit" value="Отправить запрос" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="col-sm-6 well">
+        <form class="form-vertical" action="" method="post">
+            <div class="form-group col-sm-4">
+                <input class="form-control" type="text" name="name" value="" placeholder="Имя" required>
+            </div>
+            <div class="form-group col-sm-4">
+                <input class="form-control" type="email" name="email" value="" placeholder="Email" required>
+            </div>
+            <div class="form-group col-sm-4">
+                <input class="form-control" type="tel" name="phone" value="" placeholder="Телефон" required>
+            </div>
+            <div class="form-group col-sm-12">
+                <textarea name="msg" class="form-control" rows="6"></textarea>
+            </div>
+            <div class="flex-center col-sm-12">
+                <input type="submit" value="Отправить запрос" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <div class="panel panel-primary" data-toggle="collapse" data-target="#demo">
+        <div class="panel-heading">Panel Header Here</div>
+            <div class="panel-body collapse" id="demo">
+
+                <div class="col-sm-6">
+                    <form class="form-horizontal" action="" method="post">
+                        <div class="form-group">
+                            <label class="col-sm-4">Введите ваше имя:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="text" name="name" value="" placeholder="Имя" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4">Введите ваше имя:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="email" name="email" value="" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4">Введите ваше имя:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="tel" name="phone" value="" placeholder="Телефон" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4">Введите ваше имя:</label>
+                            <div class="col-sm-8">
+                                <textarea name="msg" class="form-control" rows="6"></textarea>
+                            </div>
+                        </div>
+                        <div class="flex-center">
+                            <input type="submit" value="Отправить запрос" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+            <!--<div class="panel-footer">Panel Footer</div>-->
+    </div>
+</div>
+
+
+</body>
+</html>

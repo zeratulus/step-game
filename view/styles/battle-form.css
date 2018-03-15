@@ -1,0 +1,30 @@
+.battle-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+}
+.battle-panel {
+    min-height: 300px;
+    width: 49%;
+}
+.player {
+    max-width: 250px;
+}
+.enemy {
+    max-width: 250px;
+}
+.battle-panel.right img {
+    float: right;
+}
+.battle-panel.left img {
+    float: left;
+}
+.battle-panel p {
+    display: inline-block;
+}
+.battle-panel.right p {
+    display: inline-block;
+    text-align: right;
+    width: calc(100% - 250px);
+}

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+h1, h2, h3, h4, h5, h6, p, body, div {
+    font-family: 'Russo One';
+}
+.text-center {
+    text-align: center;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+.btn {
+    min-width: 250px;
+    border-radius: 60px;
+    height: 70px;
+    font-size: 42px;
+    text-align: center;
+    border: 2px solid #000;
+    background-color: transparent;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Russo One';
+    outline: none;
+}
+.btn-primary {
+    border: 2px solid #000;
+    background-color: transparent;
+    color: #000;
+    transition: 0.8s all;
+}
+.btn-primary:hover {
+    border: 2px solid #ff0000;
+    background-color: rgba(255,0,0,0.4);
+    color: #ff0000;
+    transition: 0.8s all;
+}
