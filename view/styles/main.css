@@ -25,6 +25,7 @@ h1, h2, h3, h4, h5, h6, p, body, div {
     cursor: pointer;
     font-family: 'Russo One';
     outline: none;
+    margin: 15px 0 15px 0;
 }
 .btn-primary {
     border: 2px solid #000;
@@ -37,4 +38,9 @@ h1, h2, h3, h4, h5, h6, p, body, div {
     background-color: rgba(255,0,0,0.4);
     color: #ff0000;
     transition: 0.8s all;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+    outline: none !important;
 }

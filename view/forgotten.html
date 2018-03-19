@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forms</title>
+    <link rel="stylesheet" href="view/src/bootstrap/css/bootstrap.css">
+    <script src="view/src/jquery-2.1.1.min.js"></script>
+    <script src="view/src/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="view/styles/main.css">
+    <base href="<?php echo $base; ?>">
+</head>
+<body class="container">
+
+    <div class="row">
+        <form action="<?php echo $action; ?>" method="post">
+            <div class="col-sm-12 well">
+                <h1>Востанови свой акаунт и вперед в бой</h1>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="email" name="email" placeholder="email" class="form-control" required>
+                    </div>
+                </div>
+                <div class="flex-center col-sm-12">
+                    <button type="submit" class="btn btn-primary">Восстановить пароль</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

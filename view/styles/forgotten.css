@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+body{
+    background: url("the_elder_scrolls_v_skyrim_skaly_voin_113984_1600x900.jpg") no-repeat;
+    background-size: 100%;
+}
+form{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.email{
+    animation: pulse 3s 4;
+}
+
+
+
+@keyframes pulse {
+    0%{
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
