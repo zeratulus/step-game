@@ -26,6 +26,7 @@ class Player extends DBInstance
 
     public function auth($login, $password) {
         $results = $this->db->query('SELECT * FROM players WHERE login = \'' . $login . '\' LIMIT 1');
+
         if ($results->num_rows) {
             $hash = md5($password . $results->row['salt']);
             if ($results->row['hash'] == $hash) {
@@ -64,6 +65,8 @@ class Player extends DBInstance
             return false;
         }
     }
+
+
 
 
 

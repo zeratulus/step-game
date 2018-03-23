@@ -1,12 +1,14 @@
-<?php
+﻿<?php
 
 class ControllerAccountRegister extends \GameSystem\Controller {
 
     public function index() {
 
         $data = array(
-            'a' => 1,
-            'b' => 2
+          'base' => APP_BASE,
+          'login' => $this->link->url('account/login'),
+          'forgotten' => $this->link->url('account/forgotten'),
+          'action' => $this->link->url('account/register/validate'),
         );
 
         $this->view->setDataFromArray($data);
@@ -15,8 +17,13 @@ class ControllerAccountRegister extends \GameSystem\Controller {
 
     }
 
-    public function register() {
-        //TODO: Logic of registration
+    public function validate() {
+        foreach ($_POST as $key => $value) {
+
+            echo $key . ' - ' . $value;
+
+        }
     }
+
 
 }
