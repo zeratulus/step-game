@@ -6,7 +6,7 @@
  * Time: 18:37
  */
 
-function showUnitParams ($unit)
+function echoUnitParams ($unit)
 {
     echo 'ID: ' . $unit->id . '<br>';
     echo 'Name: ' . $unit->name . '<br>';
@@ -15,6 +15,17 @@ function showUnitParams ($unit)
     echo 'Mana Points: ' . $unit->mp . '<br>'; //Mana Points
     echo 'Armor Type: ' . $unit->armor_type . '<br>';
     echo 'Speed: ' . $unit->speed . '<br><br>';
+}
+
+function showUnitParams ($unit)
+{
+    return 'ID: ' . $unit->id . '<br>'
+    . 'Name: ' . $unit->name . '<br>'
+    . 'Health Points: ' . $unit->hp . '<br>' //Healt Points
+    . 'Armor Points: ' . $unit->ap . '<br>' //Armor Points
+    . 'Mana Points: ' . $unit->mp . '<br>' //Mana Points
+    . 'Armor Type: ' . $unit->armor_type . '<br>'
+    . 'Speed: ' . $unit->speed . '<br><br>';
 }
 
 function salt($length = 32) {

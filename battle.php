@@ -15,14 +15,14 @@ ini_set('display_errors', 1);
 
 require_once 'config.php';
 require_once 'helper.php';
-require_once 'system/request.php';
-require_once 'system/db.php';
+require_once 'GameSystem/request.php';
+require_once 'GameSystem/db.php';
 require_once 'GameObjects/unit.php';
 require_once 'GameObjects/battle_unit.php';
 
-$request = new Request();
+$request = new GameSystem\Request();
 
-$db = new DB(DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_DB);
+$db = new GameSystem\DB(DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_DB);
 
 $battle = $db->query('SELECT * FROM battles WHERE id = 1 LIMIT 1')->row;
 
@@ -47,47 +47,3 @@ if ($request->server['REQUEST_METHOD'] == 'POST') {
         $db->query('DELETE FROM battles WHERE id = ' . $battle['id']);
     }
 }
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Battle</title>
-    <link rel="stylesheet" href="view/styles/main.css">
-    <link rel="stylesheet" href="view/styles/battle-form.css">
-</head>
-<body>
-
-<form action="battle.php" method="post">
-
-    <?php if ($enemy->hp > 0) { ?>
-        <div class="battle-flex">
-            <div class="battle-panel left">
-                <h2 class="text-center"><?php echo $player->name; ?></h2>
-                <img src="<?php echo $player->image; ?>" class="player">
-                <p><?php showUnitParams($player); ?></p>
-            </div>
-            <div class="battle-panel right">
-                <h2 class="text-center"><?php echo $enemy->name; ?></h2>
-                <img src="<?php echo $enemy->image; ?>" class="enemy">
-                <p><?php showUnitParams($enemy); ?></p>
-            </div>
-        </div>
-
-        <div class="flex-center">
-            <input type="submit" value="Attack!" class="btn btn-primary">
-        </div>
-    <?php } else { ?>
-        <div class="flex-center flex-wrap">
-            <h1>You win this <?php echo $enemy->name; ?></h1>
-        </div>
-        <div class="flex-center flex-wrap">
-            <img src="<?php echo $enemy->image; ?>" class="enemy">
-        </div>
-    <?php } ?>
-</form>
-
-</body>
-</html>

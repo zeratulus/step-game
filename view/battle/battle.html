@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battle</title>
+    <link rel="stylesheet" href="view/styles/main.css">
+    <link rel="stylesheet" href="view/styles/battle-form.css">
+    <base href="<?php echo $base; ?>">
+</head>
+<body>
+
+<form action="<?php echo $action; ?>" method="post">
+
+    <?php if ($enemy_hp > 0) { ?>
+        <div class="battle-flex">
+            <div class="battle-panel left">
+                <h2 class="text-center"><?php echo $player_name; ?></h2>
+                <img src="<?php echo $player_image; ?>" class="player">
+                <p><?php echo $player; ?></p>
+            </div>
+            <div class="battle-panel right">
+                <h2 class="text-center"><?php echo $enemy_name; ?></h2>
+                <img src="<?php echo $enemy_image; ?>" class="enemy">
+                <p><?php echo $enemy; ?></p>
+            </div>
+        </div>
+
+        <div class="flex-center">
+            <input type="submit" value="Attack!" class="btn btn-primary">
+        </div>
+    <?php } else { ?>
+        <div class="flex-center flex-wrap">
+            <h1>You win this <?php echo $enemy_name; ?></h1>
+        </div>
+        <div class="flex-center flex-wrap">
+            <img src="<?php echo $enemy_image; ?>" class="enemy">
+        </div>
+    <?php } ?>
+</form>
+
+</body>
+</html>
