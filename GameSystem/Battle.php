@@ -17,9 +17,10 @@ class Battle extends DBInstance
         parent::__construct($db);
     }
 
-    public function add()
+    public function add($player_id, $enemy)
     {
-        $result = $this->db->query('SELECT * FROM battles WHERE id = ' . (int)$battle_id . ' LIMIT 1');
+        $this->db->query('INSERT INTO battles(player_id, p_hp, p_ap, p_mp, e_hp, e_ap, e_mp, enemy_id) VALUES ('.$player_id.', 100, 100, 100, '.$enemy['hp'].', '.$enemy['ap'].', '.$enemy['mp'].', '.$enemy['enemy_id'].');');
+        return $this->db->getLastId();
     }
 
     public function load($battle_id)

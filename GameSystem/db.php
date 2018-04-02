@@ -45,4 +45,8 @@ class DB {
         }
     }
 
+    public function getLastId() {
+        return $this->link->insert_id;
+    }
+
 }

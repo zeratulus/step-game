@@ -6,8 +6,6 @@
  * Time: 18:04
  */
 
-//use GameObjects;
-
 class ControllerBattleBattle extends GameSystem\Controller
 {
 
@@ -30,11 +28,9 @@ class ControllerBattleBattle extends GameSystem\Controller
 
             if ($enemy->hp > 0) {
                 $battle_model->update($battle_id, $player, $enemy);
-//                $db->query('UPDATE battles SET player_id=1, p_hp='.$player->hp.', p_ap='.$player->ap.', p_mp='.$player->mp.', e_hp='.$enemy->hp.', e_ap='.$enemy->ap.', e_mp='.$enemy->mp.', enemy_id=1 WHERE id=1');
             } else {
                 //TODO: End of battle, player earn XP by enemy_id
                 $battle_model->delete($battle['id']);
-//                $db->query('DELETE FROM battles WHERE id = ' . $battle['id']);
             }
         }
 
@@ -50,6 +46,7 @@ class ControllerBattleBattle extends GameSystem\Controller
             'enemy_hp' => $enemy->hp,
             'player' => showUnitParams($player),
             'enemy' => showUnitParams($enemy),
+            'back' => $this->link->url('battle/gobattle')
         );
 
         $this->view->setDataFromArray($data);

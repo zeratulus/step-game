@@ -51,6 +51,17 @@ class Player extends DBInstance
         }
     }
 
+    public function isEmailExists($email) {
+
+        $results = $this->db->query('SELECT email FROM players WHERE email =\'' . $email . '\';');
+
+        if ($results->num_rows > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function register($data = array()) {
         if (!$this->isLoginExists($data['login'])) {
             if ($data['password_confirmation'] == $data['password']) {

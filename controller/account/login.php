@@ -22,14 +22,14 @@ class ControllerAccountLogin extends GameSystem\Controller {
 
     public function auth() {
 
-        if (isset($_POST['email'])) {
-            if (empty($_POST['email'])) {
-                echo 'Bad email';
+        if (isset($_POST['login'])) {
+            if (empty($_POST['login'])) {
+                echo 'Bad login';
                 die;
             }
         }
 
-        $email = $_POST['email'];
+        $login = $_POST['login'];
 
         if (isset($_POST['password'])) {
             if (empty($_POST['password'])) {
@@ -42,7 +42,8 @@ class ControllerAccountLogin extends GameSystem\Controller {
 
         $player = new GameObjects\Player($this->db_link);
 
-        if ($player->auth($email, $password)) {
+        if ($player->auth($login, $password)) {
+            header('Location: ' . $this->link->url('battle/gobattle'));
             echo 'You are logged in!';
         } else {
             echo 'Not logged!';

@@ -18,9 +18,10 @@ class ControllerAccountRegister extends \GameSystem\Controller {
     }
 
     public function validate() {
-        foreach ($_POST as $key => $value) {
+        if ($this->request->server['REQUEST_METHOD'] == 'POST') {
 
-            echo $key . ' - ' . $value;
+            $player = new \GameObjects\Player($this->db_link);
+            $player->register($this->request->post);
 
         }
     }
