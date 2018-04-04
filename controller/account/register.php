@@ -26,5 +26,4 @@ class ControllerAccountRegister extends \GameSystem\Controller {
         }
     }
 
-
 }

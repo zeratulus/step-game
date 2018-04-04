@@ -15,6 +15,7 @@ h1, h2, h3, h4, h5, h6, p, body, div {
 }
 .btn {
     min-width: 250px;
+    max-width: 100%;
     border-radius: 60px;
     height: 70px;
     font-size: 42px;

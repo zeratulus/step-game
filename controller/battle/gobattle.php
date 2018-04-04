@@ -24,15 +24,16 @@ class ControllerBattleGoBattle extends GameSystem\Controller
 
     public function battle() {
         if ($this->request->server['REQUEST_METHOD'] == 'POST') {
+
             $battle_model = new GameSystem\Battle($this->db_link);
 
             $enemy = $battle_model->getRandomEnemy();
 
             $battle_id = $battle_model->add(1, $enemy);
 
-            $args = array('battle_id' => $battle_id);
+            $url_args = array('battle_id' => $battle_id);
 
-            header('Location: ' . $this->link->url('battle/battle', $args));
+            header('Location: ' . $this->link->url('battle/battle', $url_args));
         }
 
     }
