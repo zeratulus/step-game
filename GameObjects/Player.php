@@ -20,8 +20,8 @@ class Player extends DBInstance
 
     public function __construct(DB $db)
     {
-     parent::__construct($db);
-     $this->isLogged = false;
+         parent::__construct($db);
+         $this->isLogged = false;
     }
 
     public function auth($login, $password) {
@@ -52,7 +52,6 @@ class Player extends DBInstance
     }
 
     public function isEmailExists($email) {
-
         $results = $this->db->query('SELECT email FROM players WHERE email =\'' . $email . '\';');
 
         if ($results->num_rows > 0) {

@@ -24,7 +24,7 @@ class Router {
     }
 
     private function makeAction($route) {
-        $route = explode('/', $route);
+        $route = explode('/', str_replace('\\','/', $route));
         $this->path = $route[0]; //get controller path
         $this->controller = $route[1]; //get controller file
 

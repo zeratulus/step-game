@@ -12,6 +12,8 @@ use GameObjects;
 
 class Application {
 
+    public $registry;
+
     public $db;
     public $request;
     public $player;

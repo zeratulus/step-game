@@ -18,6 +18,7 @@ class ControllerAccountRegister extends \GameSystem\Controller {
     }
 
     public function validate() {
+
         if ($this->request->server['REQUEST_METHOD'] == 'POST') {
 
             $player = new \GameObjects\Player($this->db_link);
