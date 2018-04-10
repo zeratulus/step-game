@@ -27,6 +27,7 @@ class ControllerAccountForgotten extends GameSystem\Controller {
 
             if ($player->isEmailExists($email)) {
                 // TODO: отправлять на email сообщения
+                echo "Мы выслали ссылку для сброса пароля на вашу почту: " . $email;
             } else {
                 echo "Такой почты не существует";
             }

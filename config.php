@@ -5,6 +5,7 @@
  * Date: 26.01.18
  * Time: 18:36
  */
+
 define('DB_HOST', 'localhost');
 define('DB_PORT', '3306');
 define('DB_USER', 'root');

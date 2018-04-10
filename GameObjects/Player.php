@@ -8,15 +8,13 @@
 
 namespace GameObjects;
 
-
 use GameSystem\DB;
 use GameSystem\DBInstance;
-
-//require_once '../helper.php';
 
 class Player extends DBInstance
 {
     public $isLogged;
+    public $errors = array();
 
     public function __construct(DB $db)
     {
@@ -34,11 +32,13 @@ class Player extends DBInstance
                 return true;
             } else {
                 $this->isLogged = false;
-                return false;
+                $this->errors[] = 'Wrong Password';
+                return $this->errors;
             }
         } else {
             $this->isLogged = false;
-            return false;
+            $this->errors[] = 'Login not exists';
+            return $this->errors;
         }
     }
 
@@ -62,23 +62,26 @@ class Player extends DBInstance
     }
 
     public function register($data = array()) {
-        if (!$this->isLoginExists($data['login'])) {
-            if ($data['password_confirmation'] == $data['password']) {
-                $salt = salt();
-                $hash = md5($data['password'] . $salt);
-                $this->db->query('INSERT INTO players(login, email, hash, salt, lvl, exp, gold, items_id) VALUES (\''.$data['login'].'\', \''.$data['email'].'\', \''.$hash.'\', \''.$salt.'\', 0, 0, 0, 0);');
-                return true;
+        if (!$this->isEmailExists($data['email'])) {
+            if (!$this->isLoginExists($data['login'])) {
+                if ($data['password_confirmation'] == $data['password']) {
+                    $salt = salt();
+                    $hash = md5($data['password'] . $salt);
+                    $this->db->query('INSERT INTO players(login, email, hash, salt, lvl, exp, gold, items_id) VALUES (\''.$data['login'].'\', \''.$data['email'].'\', \''.$hash.'\', \''.$salt.'\', 0, 0, 0, 0);');
+                    return true;
+                } else {
+                    $this->errors[] = 'Error: Passwords not equal!';
+                    return $this->errors;
+                }
             } else {
-                return false;
+                $this->errors[] = 'Error: Login already register!';
+                return $this->errors;
             }
         } else {
-            return false;
+            $this->errors[] = 'Error: Email already register!';
+            return $this->errors;
         }
     }
-
-
-
-
 
 
 }

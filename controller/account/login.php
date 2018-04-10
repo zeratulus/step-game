@@ -42,11 +42,17 @@ class ControllerAccountLogin extends GameSystem\Controller {
 
         $player = new GameObjects\Player($this->db_link);
 
-        if ($player->auth($login, $password)) {
-            header('Location: ' . $this->link->url('battle/gobattle'));
+        $login_info = $player->auth($login, $password);
+
+        if ($login_info === true) {
             echo 'You are logged in!';
+            header('Location: ' . $this->link->url('battle/gobattle'));
         } else {
-            echo 'Not logged!';
+            if (is_array($login_info)) {
+                foreach ($login_info as $key => $value) {
+                    echo $value . '<br>';
+                }
+            }
         }
 
     }

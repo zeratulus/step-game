@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -27,3 +28,6 @@ echo '<br>';
 echo $path2;
 echo '<br>';
 echo salt(10);
+
+echo '<br>';echo     '<br>';
+echo capitalizeString(' someThing Happend   ');

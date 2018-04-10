@@ -43,13 +43,11 @@ function salt($length = 32) {
     return $salt;
 }
 function capitalizeString($str) {
-    if (strlen($str) > 0) {
-        $first_letter = strtoupper($str[0]);
-        $other_letters = substr($str, 1, strlen($str));
-        return $first_letter . $other_letters;
-    } else {
-        return $str;
+    $text = trim($str);
+    if (strlen($text) > 0) {
+        $text[0] = strtoupper($text[0]);
     }
+    return $text;
 }
 function checkDebug(\GameSystem\Request $request) {
     //php storm local web server routine
